@@ -58,9 +58,6 @@ if not os.path.exists(passwordfile):
         writer.writeheader()
         print('A New Password file is created')
 
-Master_Password = 'MasterPassword'
-    if
-
 print('#########################################')
 print("Add: To add new Credentials")
 print("Delete: To Delete existing Credentials")
