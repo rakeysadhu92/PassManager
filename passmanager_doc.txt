@@ -1,0 +1,74 @@
+
+                                                DOCUMENTATION
+
+PURPOSE:
+
+This Script Helps you to manage your Credentails of Different Websites and Applications.
+
+CONFIG FILE:
+
+There will be a Configuration file in the same folder as the script with name "passmanager.ini"
+
+You will need to add those Configurations for the script to work.
+
+Attributes:
+
+1. "file_path" : Location Where you want to save your Credentials Managing File.
+2. "file_name" : File name in which you want to save your credentials
+3. "Logging_location" : If somthing goes wrong while you are running the script. You can save those error in this specific      location for further troubleshooting or to know what went wrong.
+4. "master_hash" : You don't need to provide This currently, when you run the script for the first time, The script asks for a MasterPassword. So everytime you try to perform some Action, it will ask for the master password. So the credentials and your file is safe.
+
+NOTE: The Configuration File and script must be in the same location
+
+
+SCRIPT:
+
+* First thing the script does is check for the presence of the file that you provided in config file in the given Location.
+
+step1:
+
+* For the first time it will create an Empty csv File with a header with fieldnames: ['Service','Email','Username','Password','Phonenumber','LastUpdate_Date']
+
+* Then it will Ask for a MASTER_PASSWORD that you want to setup to the file. So that no one can perform any actions [** Assuming no one has Direct access to the File from UI]
+
+* It Encrypts the provided MASTER_PASSWORD and saved that hash in configuration file.
+
+* After that everytime you perform An Action you will be asked for Master Password to continue further Along.
+
+* Everytime you run the Script it will check for the presence of the file.
+
+
+FUNCTIONALITIES:
+
+Here are the Four Actions that you can perform on the File using script.
+
+1.Add:
+
+* When you perform this Action, it will ask for the Servicename, Email Username Password PhoneNumber and it does add the time when you are performing this Add on the file.
+
+* Checks for the Duplicate Servicenames on the file and asks you to use a different servicename, which you can provide by adding just the sequential numbers to the servicename [example:  gmail  gmail1 gmail2, gmail3  with diff ServiceNames]
+
+2.Get:
+
+* It asks for the Master_password and validate and let you get the credentials.
+
+* Get functionality will get you the Credentials from the file and prints them on the terminal.
+
+* If you provide a wrong Servicename, it warns you that there is no service availble on the file and prints the available Servicenames that are available.
+
+3.Update:
+
+*Before you Update somthing it will ask for the Master_password.
+
+* Once the Master_password is validated, it will ask for the servicename that you want to perform update on.
+and then it will asks for the field that you want to edit.
+
+* If either one of them is not in the File, it warns and prints the available servicenames and fields.
+
+4.Delete:
+
+*Before you Delete somthing it will ask for the Master_password.
+
+* Once the Master_password is validated, it will ask for the servicename that you want to Delete. And it doesnt allow you to delete the Header.
+
+* If the ServiceName is Not available in the file, it warns you and prints out the available ServiceNames on the File.

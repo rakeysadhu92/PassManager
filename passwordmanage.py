@@ -151,7 +151,7 @@ def Get_Credentials():
             exit()
 
 def Update_Credentails():
-    #Verify_Password()
+    Verify_Password()
     Update_service = str(input('Please enter the service to update :'))
     Val = []
     with open(passwordfile, 'r') as readFile:
